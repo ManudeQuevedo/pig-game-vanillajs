@@ -27,7 +27,6 @@ diceElement.classList.add('hidden');
 rollDice.addEventListener('click', () => {
 	// Roll the dice:
 	const dice = Math.trunc(Math.random() * 6) + 1;
-	console.log(dice);
 
 	// Display the dice
 	diceElement.classList.remove('hidden');
@@ -48,7 +47,6 @@ rollDice.addEventListener('click', () => {
 		// Validates which one is the current active player to properly switch:
 		activePlayer = activePlayer === 1 ? 2 : 1;
 		// Add or Remove the class from the active player:
-		console.log(playerOne, playerTwo);
 		playerOne.classList.toggle('player-active');
 		playerTwo.classList.toggle('player-active');
 	}
