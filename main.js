@@ -3,8 +3,8 @@
 // Players:
 const scorePlayerOne = document.querySelector('#score-1');
 const scorePlayerTwo = document.querySelector('#score-2');
-const currentScorePlayerOne = document.querySelector('#current-1');
-const currentScorePlayerTwo = document.querySelector('#current-2');
+const playerOne = document.querySelector('.player-1');
+const playerTwo = document.querySelector('.player-2');
 
 // Elements:
 const diceElement = document.querySelector('.dice');
@@ -35,8 +35,21 @@ rollDice.addEventListener('click', () => {
 
 	// Checked rolled dice:
 	if (dice !== 1) {
+		// If dice is not 1, roll the dice and sum the numbers:
 		currentScore += dice;
-		currentScorePlayerOne.textContent = currentScore;
+		// Determine which player is the active one and display the current score sum:
+		document.getElementById(`current-${activePlayer}`).textContent =
+			currentScore;
 	} else {
+		// Reset current player score to 0 before switching players:
+		document.getElementById(`current-${activePlayer}`).textContent = 0;
+		// Score is now 0
+		currentScore = 0;
+		// Validates which one is the current active player to properly switch:
+		activePlayer = activePlayer === 1 ? 2 : 1;
+		// Add or Remove the class from the active player:
+		console.log(playerOne, playerTwo);
+		playerOne.classList.toggle('player-active');
+		playerTwo.classList.toggle('player-active');
 	}
 });
