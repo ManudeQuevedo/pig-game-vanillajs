@@ -3,6 +3,8 @@
 // Players:
 const playerOne = document.querySelector('.player-0');
 const playerTwo = document.querySelector('.player-1');
+const namePlayerOne = document.querySelector('#name-0');
+const namePlayerTwo = document.querySelector('#name-1');
 const scorePlayerOne = document.querySelector('#score-0');
 const scorePlayerTwo = document.querySelector('#score-1');
 const currentScorePlayerOne = document.querySelector('#current-0');
@@ -38,6 +40,16 @@ const init = function () {
 	playerTwo.classList.remove('player-winner');
 	playerOne.classList.add('player-active');
 	playerTwo.classList.remove('player-active');
+
+	// Get Player names:
+	const getNames = function () {
+		const name1 = prompt('Player One Name: ');
+		const name2 = prompt('Player Two Name: ');
+		namePlayerOne.textContent = name1;
+		namePlayerTwo.textContent = name2;
+	};
+
+	getNames();
 };
 
 const switchPlayer = function () {
