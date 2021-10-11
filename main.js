@@ -98,7 +98,7 @@ btnHold.addEventListener('click', () => {
 			scores[activePlayer];
 		console.log(scores);
 		// validate that current score is >= to 100:
-		if (scores[activePlayer] >= 20) {
+		if (scores[activePlayer] >= 100) {
 			playing = false;
 			diceElement.classList.add('hidden');
 			document
